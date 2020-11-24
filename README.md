@@ -1,0 +1,2 @@
+# BlogProject
+# Working with Django
