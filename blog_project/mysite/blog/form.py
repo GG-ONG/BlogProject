@@ -1,5 +1,5 @@
 from django import forms
-from mysite.blog.models import Post, Comment
+from blog.models import Post, Comment
 
 class PostForm(forms.ModelForm):
 
@@ -22,4 +22,3 @@ class CommentForm(forms.ModelForm):
             'author': forms.TextInput(attrs={'class': 'textinputclass'}),
             'text': forms.Textarea(attrs={'class': 'editable medium-editor-textarea'})
         }
-

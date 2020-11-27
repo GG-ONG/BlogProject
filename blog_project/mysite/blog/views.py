@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from mysite.blog.models import Post, Comment
-from mysite.blog.form import PostForm, CommentForm
+from blog.models import Post, Comment
+from blog.form import PostForm, CommentForm
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -78,5 +78,3 @@ def comment_remove(request, pk):
     post_pk = comment.post.pk
     comment.delete()
     return redirect('post_detail', pk=post_pk)
-
-

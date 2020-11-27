@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url, include
-from django.contrib.auth import views
+from django.contrib.auth import login,logout
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include('blogs.urls')),
-    url(r'account/login/$', views.login, name='login'),
-    url(r'account/logout/$', views.logout, name='logout', kwargs={'next_page': '/'})
+    url(r'', include('blog.urls')),
+    url(r'account/login/$', login, name='login'),
+    url(r'account/logout/$', logout, name='logout', kwargs={'next_page': '/'})
 ]
